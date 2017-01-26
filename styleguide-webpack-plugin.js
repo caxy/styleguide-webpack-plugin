@@ -1,5 +1,4 @@
 const kss = require('kss');
-const styleguide = require('caxy-styleguide-core');
 
 function StyleguideWebpackPlugin (options) {
   if (!options) {
@@ -21,12 +20,9 @@ StyleguideWebpackPlugin.prototype.apply = function (compiler) {
     self.webpackCss = [];
     self.webpackJs = [];
 
-    console.log(compilation.chunks.parents);
-
     for (const filename in compilation.assets) {
-      console.log(filename);
-
       const assetPath = '../' + filename;
+      // TODO find best way to determine order of assets from webpack.
 
       if (/\.js$/.test(filename)) {
         // JS file.
@@ -47,7 +43,7 @@ StyleguideWebpackPlugin.prototype.apply = function (compiler) {
     }
 
     callback();
-  })
+  });
 
   compiler.plugin('done', function () {
     self.options.css = self.options.css || [];
@@ -58,9 +54,7 @@ StyleguideWebpackPlugin.prototype.apply = function (compiler) {
       js: self.options.js.concat(self.webpackJs)
     });
 
-    console.log(kssOptions);
-
-    styleguide(kssOptions);
+    kss(kssOptions);
   });
 };
 
