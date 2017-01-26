@@ -1,0 +1,13 @@
+{
+  "name": "caxy-styleguide-webpack-plugin",
+  "version": "0.0.1",
+  "description": "Caxy Styleguide Webpack Plugin",
+  "main": "styleguide-webpack-plugin.js",
+  "repository": "git@github.com:caxy/styleguide-webpack-plugin.git",
+  "author": "Caxy <dev@caxy.com>",
+  "license": "MIT",
+  "dependencies": {
+    "caxy-styleguide-core": "^0.0.2",
+    "kss": "^3.0.0-beta.17"
+  }
+}
