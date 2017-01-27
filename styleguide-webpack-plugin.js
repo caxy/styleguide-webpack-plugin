@@ -1,4 +1,10 @@
-const kss = require('kss');
+let kss
+
+try {
+  kss = require('kss');
+} catch (err) {
+  kss = require(__dirname + '/../front-end-starter-kit/node_modules/kss');
+}
 
 function StyleguideWebpackPlugin (options) {
   if (!options) {

@@ -6,7 +6,6 @@
   "repository": "git@github.com:caxy/styleguide-webpack-plugin.git",
   "author": "Caxy <dev@caxy.com>",
   "license": "MIT",
-  "dependencies": {
-    "kss": "^3.0.0-beta.17"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
